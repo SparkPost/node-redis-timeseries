@@ -1,6 +1,6 @@
 {
   "name": "@sparkpost/redis-timeseries",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Manage timeseries data storage in Redis with ease",
   "main": "index.js",
   "scripts": {
