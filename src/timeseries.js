@@ -113,7 +113,17 @@ TimeSeries.prototype.getHits = function(key, gran, count, callback) {
     }
 
     for(var ts=from, i=0, data=[]; ts<=to; ts+=properties.duration, i+=1) {
-      data.push([ts, results[i] ? parseInt(results[i], 10) : 0]);
+      var result = results[i];
+      // this will account for the difference in multi transaction results between ioredis and node_redis
+      // https://github.com/luin/ioredis/wiki/Migrating-from-node_redis
+      if (result instanceof Array) {
+        if (result[0]) {
+          return callback(result[0]);
+        }
+        result = result[1];
+      }
+
+      data.push([ts, result ? parseInt(result, 10) : 0]);
     }
 
     return callback(null, data.slice(Math.max(data.length - count, 0)));

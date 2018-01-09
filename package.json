@@ -1,6 +1,6 @@
 {
-  "name": "redis-timeseries",
-  "version": "0.4.0",
+  "name": "@sparkpost/redis-timeseries",
+  "version": "1.0.0",
   "description": "Manage timeseries data storage in Redis with ease",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tonyskn/node-redis-timeseries.git"
+    "url": "git+https://github.com/SparkPost/redis-timeseries.git"
   },
   "keywords": [
     "Redis",
@@ -19,9 +19,6 @@
   ],
   "author": "Tony Sokhon",
   "license": "MIT",
-  "peerDependencies": {
-    "redis": "0.x || 1.x || 2.x"
-  },
   "devDependencies": {
     "redis": "0.x",
     "hiredis": "0.x",
